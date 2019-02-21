@@ -1,10 +1,13 @@
-var express = require('express');
-var router = express.Router();
-let database = require('../assets/dataBase');
+let addMemberRouter = require('./Member');
+let {Account} = require('./Account');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.send('首页')
-});
-
-module.exports = router;
+exports.touterArr = [{
+  url: '/addMember',
+  moudles: addMemberRouter
+}, {
+  url: '/users',
+  moudles: Account.create()
+}, {
+  url: '/account',
+  moudles: Account.findAccount()
+}];

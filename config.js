@@ -3,17 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var touterArr = [{
-  url: '/',
-  moudles: indexRouter
-}, {
-  url: '/users',
-  moudles: usersRouter
-}];
-
+let {touterArr} = require('./routes/index'); // 路由地址
 var app = express();
 
 // view engine setup
